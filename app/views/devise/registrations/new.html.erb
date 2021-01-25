@@ -1,0 +1,37 @@
+<div id="container">
+  <div id="box-login">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div id="avatar">
+        <h2 id="register">Registrar</h2>
+        <%= image_tag 'profile.svg', alt: 'Avatar', width: '50%' %>
+      </div>
+
+      <div class="forms">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",
+          placeholder: "Email", class: "input" %>
+          
+        <%= f.password_field :password, autocomplete: "new-password",
+          placeholder: "Senha com mínimo 6 caracteres", class: "input" %>
+          
+        <%= f.password_field :password_confirmation, autocomplete: "new-password",
+          placeholder: "Repita a senha", class: "input" %>
+
+        <div class="select-role">
+          <%= f.label :role, 'Cadastrar como:' %>
+          <%= f.select(:role, [['candidato', 'candidate'], ['headhunter', 'headhunter']]) %>
+        </div>
+      </div> 
+          
+      <div class="button">
+        <%= f.submit t('.sign_up'), id: "button" %>
+      </div>
+
+    <% end %>
+
+    <div class="links">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

@@ -2,6 +2,9 @@
 <html>
   <head>
     <title>Headhunter</title>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -18,10 +21,18 @@
     <nav id="navbar">
       <a href="/" id="logo">Headhunter</a>
       <div id="navbar-right">
-        <%= link_to 'Entrar' %>
-        <%= link_to 'Registrar' %>
+        <% if user_signed_in? %>
+          <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to 'Entrar', new_user_session_path %>
+          <%= link_to 'Registrar', new_user_registration_path %>
+        <% end %>
       </div>
     </nav>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <%= yield %>
   </body>
 </html>
