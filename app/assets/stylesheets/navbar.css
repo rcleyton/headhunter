@@ -1,0 +1,49 @@
+@import "./variables.css";
+
+#navbar {
+  overflow: hidden;
+  width: min(90%, 112rem);
+  margin: auto;
+  background-color: var(color-white);
+  padding: 20px 10px;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+#navbar a {
+  float: left;
+  color: var(--color-bluedark1);
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+#navbar a.logo {
+  font-weight: bold;
+}
+
+#navbar a:hover {
+  background-color: var(--color-bluehover);
+  color: var(--color-white);
+}
+
+#navbar a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+#navbar-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  #navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  #navbar-right {
+    float: none;
+  }
+}

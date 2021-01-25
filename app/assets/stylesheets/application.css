@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+
+ :root {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+}
+
+h1 {
+  color: var(--color-bluedark1);
+}
+
+h2 {
+  color: var(--color-bluedark2);
+}
+
+body,
+nav,
+button {
+  font: 400 1.8rem/1 'Nunito', sans-serif;
+}
+
+.container {
+  width: min(90%, 112rem);
+  margin: auto;
+}
+

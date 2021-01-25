@@ -7,9 +7,21 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
+    <nav id="navbar">
+      <a href="/" id="logo">Headhunter</a>
+      <div id="navbar-right">
+        <%= link_to 'Entrar' %>
+        <%= link_to 'Registrar' %>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
