@@ -1,29 +1,29 @@
 require 'rails_helper'
 
-feature 'Headhunter create a new account' do
+feature 'Candidate create a new account' do
   scenario 'successfully' do
     visit root_path
     click_on 'Registrar'
     fill_in 'Email', with: 'candidate@candidate.com.br'
     fill_in 'Senha com mínimo 6 caracteres', with: '123456'
     fill_in 'Repita a senha', with: '123456'
-    select 'headhunter', from: 'Cadastrar como'
+    select 'candidato', from: 'Cadastrar como'
     click_on 'Cadastrar'
-
-    expect(page).to have_text('Login efetuado com sucesso.')
+    
+    expect(page).to have_content('Login efetuado com sucesso.')
     expect(page).not_to have_link('Entrar')
     expect(page).to have_link('Sair')
   end
 
   scenario 'and validate all fields' do
-    headhunter = create(:user)
+    candidate = create(:user)
 
     visit root_path
     click_on 'Registrar'
     fill_in 'Email', with: ''
     fill_in 'Senha com mínimo 6 caracteres', with: ''
     fill_in 'Repita a senha', with: ''
-    select 'headhunter', from: 'Cadastrar como'
+    select 'candidato', from: 'Cadastrar como'
     click_on 'Cadastrar'
 
     expect(page).to have_content('Email não pode ficar em branco')
@@ -31,12 +31,12 @@ feature 'Headhunter create a new account' do
   end
 
   scenario 'and log out' do
-    headhunter = create(:user)
+    candidate = create(:user)
 
     visit root_path
     click_on 'Entrar'
-    fill_in 'Email', with: headhunter.email
-    fill_in 'Senha', with: headhunter.password
+    fill_in 'Email', with: candidate.email
+    fill_in 'Senha', with: candidate.password
     within '.button' do
       click_on 'Entrar'
     end
