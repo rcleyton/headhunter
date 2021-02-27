@@ -2,6 +2,10 @@
   "name": "headhunter",
   "private": true,
   "dependencies": {
+    "@rails/webpacker": "5.2.1",
     "chromedriver": "^88.0.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.2"
   }
 }
