@@ -14,3 +14,23 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+document.addEventListener('DOMContentLoaded', () => {
+  const backgroundcolors = {
+    notice: "linear-gradient(to right, #00b09b, #96c93d)",
+    alert: "#f44336",
+    error: "#f44336"
+  }
+
+  JSON.parse(document.body.dataset.flashMessages).forEach(flashMessage => {
+    const [type, message] = flashMessage;
+
+    Toastify({
+      text: message,
+      duration: 3000,
+      close: true,
+      backgroundColor: backgroundcolors[type],
+      stopOnFocus: true
+    }).showToast();
+  });
+});

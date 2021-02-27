@@ -1,5 +1,7 @@
 {
   "name": "headhunter",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "chromedriver": "^88.0.0"
+  }
 }

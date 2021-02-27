@@ -30,8 +30,11 @@ rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
 end
+
+Capybara.javascript_driver = :selenium_chrome_headless
+
 RSpec.configure do |config|
-  #config.include Warden::Test::Helpers
+  config.include Warden::Test::Helpers
   config.include FactoryBot::Syntax::Methods
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

@@ -10,29 +10,17 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-        
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+ 
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap"
       rel="stylesheet"
     />
   </head>
 
-  <body>
-    <nav id="navbar">
-      <a href="/" id="logo">Headhunter</a>
-      <div id="navbar-right">
-        <% if user_signed_in? %>
-          <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to 'Entrar', new_user_session_path %>
-          <%= link_to 'Registrar', new_user_registration_path %>
-        <% end %>
-      </div>
-    </nav>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
+  <body data-flash-messages="<%= JSON.dump(flash.to_a) %>">
+    <%= render 'layouts/navbar'%>  
     <%= yield %>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   </body>
 </html>

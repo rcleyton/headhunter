@@ -1,7 +1,7 @@
 <div id="container">
   <div id="box-login">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
+      <%= render "devise/shared/error_messages" %>
 
       <div id="avatar">
         <h2 id="register">Registrar</h2>
@@ -9,18 +9,24 @@
       </div>
 
       <div class="forms">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email",
-          placeholder: "Email", class: "input" %>
-          
-        <%= f.password_field :password, autocomplete: "new-password",
-          placeholder: "Senha com mínimo 6 caracteres", class: "input" %>
-          
-        <%= f.password_field :password_confirmation, autocomplete: "new-password",
-          placeholder: "Repita a senha", class: "input" %>
+        <%= form_group_for f, :email, label: false  do %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email",
+            placeholder: "Email", class: "input" %>
+        <% end %>
+
+        <%= form_group_for f, :password, label: false  do %>    
+          <%= f.password_field :password, autocomplete: "new-password",
+            placeholder: "Senha com mínimo 6 caracteres", class: "input" %>
+        <% end %>
+
+        <%= form_group_for f, :password_confirmation, label: false do %> 
+          <%= f.password_field :password_confirmation, autocomplete: "new-password",
+            placeholder: "Repita a senha", class: "input" %>
+        <% end %>
 
         <div class="select-role">
           <%= f.label :role, 'Cadastrar como:' %>
-          <%= f.select(:role, [['candidato', 'candidate'], ['headhunter', 'headhunter']]) %>
+          <%= f.select(:role, [['Candidato', 'candidate'], ['Headhunter', 'headhunter']]) %>
         </div>
       </div> 
           

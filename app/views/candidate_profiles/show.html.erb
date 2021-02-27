@@ -1,0 +1,41 @@
+<div class="container">
+
+  <div id="content-box">
+    <h2>Meu perfil</h2>
+
+    <div class="photo-profile">
+      <%= image_tag @candidate_profile.photo %>
+    </div>
+
+    <fieldset class="profile-description">
+      <legend class="field-name">Nome</legend>
+      <p class="field"><%= @candidate_profile.first_name %></p>
+    </fieldset>
+
+    <fieldset class="profile-description">
+      <legend class="field-name">Sobrenome</legend>
+      <p class="field"><%= @candidate_profile.lastname %></p>
+    </fieldset>
+
+    <fieldset class="profile-description">
+      <legend class="field-name">Sobre mim</legend>
+      <p class="field"><%= @candidate_profile.about_me %></p>
+    </fieldset>
+
+    <fieldset class="profile-description">
+      <legend class="field-name">Data de nascimento</legend>
+      <p class="field"><%= @candidate_profile.birthdate %></p>
+    </fieldset>
+
+    <fieldset class="profile-description">
+      <legend class="field-name">Educação</legend>
+      <p class="field"><%= @candidate_profile.degree %></p>
+    </fieldset>
+
+    <fieldset class="profile-description">
+      <legend class="field-name">Experiência</legend>
+      <p class="field"><%= @candidate_profile.experience %></p>
+    </fieldset>
+
+  </div>
+</div>
