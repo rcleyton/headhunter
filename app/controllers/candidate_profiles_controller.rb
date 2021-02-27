@@ -1,7 +1,11 @@
 class CandidateProfilesController < ApplicationController
+  before_action :authorize_candidate!, except: [:show]
 
   def show
     @candidate_profile = CandidateProfile.find(params[:id])
+    if current_user.candidate_profile != @candidate_profile 
+      redirect_to root_path
+    end
   end
 
   def new
@@ -25,4 +29,8 @@ class CandidateProfilesController < ApplicationController
                                               :photo, :user_id)
   end
 
+  def authorize_candidate!
+    return if current_user.candidate?
+    redirect_to root_path
+  end
 end
