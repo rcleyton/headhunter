@@ -3,6 +3,7 @@
   <div id="navbar-right">
     <% if user_signed_in? %>
       <a><%= "Olá #{current_user.email}"%></a>
+      <%= link_to 'Dashboard', dashboard_path %>
       <%= link_to 'Meu Perfil', current_user.candidate_profile %>
       <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
     <% else %>

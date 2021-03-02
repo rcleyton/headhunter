@@ -1,0 +1,48 @@
+<div class="container">
+
+  <%# link_to 'Editar', edit_job_path %>
+
+  <div id="content-box">
+    <h2 class="page-title">Detalhes da Vagas</h2>
+
+    <fieldset class="job-description">
+      <legend class="field-name">Código da Vaga</legend>
+      <p class="field"><%= @job.code %></p>
+    </fieldset>
+
+    <fieldset class="job-description">
+      <legend class="field-name">Título</legend>
+      <p class="field"><%= @job.title %></p>
+    </fieldset>
+
+    <fieldset class="job-description">
+      <legend class="field-name">Descrição detalhada</legend>
+      <p class="field"><%= @job.detailed_description %></p>
+    </fieldset>
+
+    <fieldset class="job-description">
+      <legend class="field-name">Requisitos</legend>
+      <p class="field"><%= @job.desired_skills %></p>
+    </fieldset>
+
+    <fieldset class="job-description">
+      <legend class="field-name">Salários</legend>
+      <p class="field"><%= number_to_currency @job.salary_range %></p>
+    </fieldset>
+
+    <fieldset class="job-description">
+      <legend class="field-name">Nível</legend>
+      <p class="field"><%= @job.vacancy_level %></p>
+    </fieldset>
+
+    <fieldset class="job-description">
+      <legend class="field-name">Encerra em</legend>
+      <p class="field"><%= l @job.limit_date, format: :long %></p>
+    </fieldset>
+
+    <fieldset class="job-description">
+      <legend class="field-name">Localização</legend>
+      <p class="field"><%= @job.job_location %></p>
+    </fieldset>
+  </div>
+</div>

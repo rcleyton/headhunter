@@ -1,7 +1,7 @@
 <div class="container">
 
   <div id="content-box">
-    <h2>Meu Perfil</h2>
+    <h2 class="profile">Meu Perfil</h2>
 
     <%= form_with model: @candidate_profile, local: true do |form| %>
 
@@ -9,6 +9,7 @@
 
       <div class="photo-profile">
         <%= image_tag("default-avatar.jpg", size: "100x100", alt: "Foto de Perfil") %> 
+        <%= form.label :photo %>
         <p><%= form.file_field :photo, id: "file" %></p>
       </div>
 
@@ -54,9 +55,8 @@
           <p><%= form.text_field :experience  %></p>
       </fieldset>
 
-      <div class="field">
-        <p><%= form.submit 'Salvar', id: "save-button"  %></p>
-      </div>
+      <p><%= form.submit 'Salvar', id: "save-button"  %></p>
+
     <% end %>
   </div>
 </div>

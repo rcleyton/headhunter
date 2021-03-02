@@ -1,0 +1,23 @@
+<div class="container">
+  <div id="content-box">
+    <div style="overflow-x:auto;">
+        <table>
+          <tr>
+            <th>Código</th>
+            <th>Vaga</th>
+            <th>Publicado</th>
+            <th>Status</th>
+          </tr>
+        <% @jobs.each do |job| %>
+          <tr>
+            <td><%= job.code %></td>
+            <td><%= job.title%></td>
+            <td><%= time_ago_in_words(job.created_at) %></td>
+            <td><%= link_to 'Conferir', job, id: "button" %></td>
+          </tr>
+        <% end %>
+        </table>
+    </div>
+
+  </div>
+</div>

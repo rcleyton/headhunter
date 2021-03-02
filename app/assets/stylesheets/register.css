@@ -51,8 +51,11 @@
   display: flex;
   flex-direction: column;
   font-size: 1.7rem;
-  padding: .7rem;
   margin-bottom: .7rem;
+}
+
+.select-role label {
+  padding: .7rem;
 }
 
 .select-role select {

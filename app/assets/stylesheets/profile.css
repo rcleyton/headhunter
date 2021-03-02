@@ -1,5 +1,4 @@
-h2{
-  /* padding-bottom: 5rem; */
+.profile {
   padding-left: 2rem;
 }
 
@@ -14,7 +13,7 @@ h2{
   border-radius: 50%;
 }
 
-.photo-profile #file {
+.photo-profile #file {  
   padding: 1rem;
 }
 
@@ -23,7 +22,7 @@ fieldset {
   border: none;
 }
 
-fieldset input {
+fieldset input, select {
   width: 100%;
   padding: 1.8rem;
   margin-bottom: 1.2rem;
@@ -55,7 +54,7 @@ fieldset input {
 }
 
 .field {
-  background-color: #fff;
+  background-color: #ECF0F1 ;
   border-radius: .7rem;
   font-size: 1.8rem;
   padding: 2rem;

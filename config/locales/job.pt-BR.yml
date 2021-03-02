@@ -1,0 +1,17 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      job: Vaga
+    attributes:
+      job:
+        title: Título
+        detailed_description: Descrição detalhada
+        desired_skills: Requisitos
+        salary_range: Salário
+        vacancy_level: Nível
+        limit_date: Encerra em
+        job_location: Localização
+        created_at: Criado em
+        updated_at: Atualizado em
+

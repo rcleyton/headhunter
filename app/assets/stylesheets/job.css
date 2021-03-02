@@ -1,0 +1,48 @@
+.page-title{
+  padding-bottom: 5rem;
+  /* padding-left: 2rem;*/  
+} 
+
+.job-description {
+  margin-bottom: 3rem;
+}
+
+.field {
+  background-color: #fff;
+  border-radius: .7rem;
+  font-size: 1.8rem;
+  padding: 2rem;
+}
+
+.field-name {
+  padding-left: 2rem;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 25px;
+}
+
+tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+td #button {
+  color: white;
+  background-color: var(--color-blue);
+  padding: 9px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+td #button:hover {
+  background-color: var(--color-bluehover);
+  color: white;
+  border: none;
+}

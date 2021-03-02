@@ -1,0 +1,72 @@
+<div class="container">
+
+  <div id="content-box">
+    <h2 class="page-title">Cadastrar Vaga</h2> 
+
+    <% @job.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+
+    <%= form_with scope: :job, url: jobs_path, local: true do |f| %>
+      <fieldset>
+        <legend>
+          <%= f.label :title %>
+        </legend>
+          <%= f.text_field :title %>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          <%= f.label :detailed_description %>
+        </legend>
+        <%= f.text_field :detailed_description %>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          <%= f.label :desired_skills %>
+        </legend>
+        <%= f.text_field :desired_skills %>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          <%= f.label :salary_range %>
+        </legend>
+          <%= f.text_field :salary_range %>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          <%= f.label :vacancy_level %>
+        </legend>
+        <%= f.select(:vacancy_level, options_for_select([
+          'Jovem Aprendiz',
+          'Estágio',
+          'Júnior',
+          'Pleno',
+          'Senior',
+          'Coordenador',
+          'Gerente',
+          'Diretor'
+        ])) %>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          <%= f.label :limit_date %>
+        </legend>
+        <%= f.date_field :limit_date %>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          <%= f.label :job_location %>
+        </legend>
+        <%= f.text_field :job_location %>
+      </fieldset>
+
+      <%= f.submit 'Salvar', id: "save-button" %>
+    <% end %>
+  </div>
+</div>

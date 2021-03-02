@@ -1,0 +1,16 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      candidate_profile: Perfil do candidato 
+    attributes:
+      candidate_profile:
+        photo: Foto 
+        first_name: Nome
+        lastname: Sobrenome
+        about_me: Sobre mim
+        birthdate: Data de nascimento
+        degree: Educação
+        experience: Experiência
+        created_at: Criado em
+        updated_at: Atualizado em
