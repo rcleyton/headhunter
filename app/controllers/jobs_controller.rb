@@ -17,6 +17,7 @@ class JobsController < ApplicationController
     if @job.save
       redirect_to @job
     else  
+      flash.now[:error] = @job.errors.full_messages.to_sentence
       render :new
     end
 

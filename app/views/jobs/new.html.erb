@@ -3,10 +3,6 @@
   <div id="content-box">
     <h2 class="page-title">Cadastrar Vaga</h2> 
 
-    <% @job.errors.full_messages.each do |msg| %>
-      <p><%= msg %></p>
-    <% end %>
-
     <%= form_with scope: :job, url: jobs_path, local: true do |f| %>
       <fieldset>
         <legend>
